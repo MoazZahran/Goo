@@ -14,9 +14,11 @@
     <string name="action_settings">Settings</string>
 
     <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
+    <string name="menu_sign_out">Sign Out</string>
     <string name="menu_slideshow">Slideshow</string>
 
     <string name="home_second">Home Second</string>
     <string name="title_activity_maps">Map</string>
+    <string name="sign_in_with_phone">Sign in With Phone</string>
+    <string name="sign_in_with_google">Sign in With Google</string>
 </resources>

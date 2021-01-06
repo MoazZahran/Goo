@@ -50,7 +50,7 @@ dependencies {
     //Firebase UI//
     implementation 'com.firebaseui:firebase-ui-auth:6.4.0'
 
-    //Matrial
+    //Material
     implementation 'com.google.android.material:material:1.2.1'
 
     //ButterKnife
@@ -68,4 +68,7 @@ dependencies {
 
     //GeoFire
     implementation 'com.firebase:geofire-android:3.0.0'
+
+    //Circle Image
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 }

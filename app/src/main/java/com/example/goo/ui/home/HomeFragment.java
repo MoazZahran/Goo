@@ -80,13 +80,24 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback {
         }
     };
 
+
     @Override
     public void onDestroy() {
-        fusedLocationProviderClient.removeLocationUpdates(locationCallback);
-        geoFire.removeLocation(FirebaseAuth.getInstance().getCurrentUser().getUid());
-        onlineRef.removeEventListener(onlineValueEventListener);
+        if(FirebaseAuth.getInstance().getCurrentUser() !=null) {
+            fusedLocationProviderClient.removeLocationUpdates(locationCallback);
+            geoFire.removeLocation(FirebaseAuth.getInstance().getCurrentUser().getUid());
+            onlineRef.removeEventListener(onlineValueEventListener);
+        }
         super.onDestroy();
     }
+
+//    @Override
+//    public void onDestroy() {
+//        fusedLocationProviderClient.removeLocationUpdates(locationCallback);
+//        geoFire.removeLocation(FirebaseAuth.getInstance().getCurrentUser().getUid());
+//        onlineRef.removeEventListener(onlineValueEventListener);
+//        super.onDestroy();
+//    }
 
     @Override
     public void onResume() {
