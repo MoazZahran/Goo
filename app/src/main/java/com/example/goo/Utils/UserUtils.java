@@ -1,11 +1,15 @@
 package com.example.goo.Utils;
 
+import android.content.Context;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.goo.Common;
+import com.example.goo.Model.TokenModel;
+import com.example.goo.Services.MyFirebaseMessagingService;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.snackbar.Snackbar;
@@ -22,5 +26,17 @@ public class UserUtils {
                 .updateChildren(updateData)
                 .addOnFailureListener(e -> Snackbar.make(view, e.getMessage(), Snackbar.LENGTH_SHORT).show())
                 .addOnSuccessListener(aVoid -> Snackbar.make(view, "Information Updated Successfully!", Snackbar.LENGTH_SHORT).show());
+    }
+
+    public static void updateToken(Context context, String token) {
+        TokenModel tokenModel = new TokenModel(token);
+
+        FirebaseDatabase.getInstance()
+                .getReference(Common.TOKEN_REFERENCE)
+                .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                .setValue(tokenModel)
+                .addOnFailureListener(e -> Toast.makeText(context, e.getMessage(), Toast.LENGTH_SHORT).show())
+                .addOnSuccessListener(aVoid -> {
+                });
     }
 }
