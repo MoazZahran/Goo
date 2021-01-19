@@ -30,6 +30,7 @@ import com.google.firebase.storage.UploadTask;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
+import androidx.core.content.ContextCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -160,9 +161,9 @@ public class DriverHomeActivity extends AppCompatActivity {
                 AlertDialog dialog = builder.create();
                 dialog.setOnShowListener(DialogInterface -> {
                     dialog.getButton(AlertDialog.BUTTON_POSITIVE)
-                            .setTextColor(getResources().getColor(android.R.color.holo_red_dark));
+                            .setTextColor(ContextCompat.getColor(DriverHomeActivity.this, android.R.color.holo_red_dark));
                     dialog.getButton(AlertDialog.BUTTON_NEGATIVE)
-                            .setTextColor(getResources().getColor(R.color.colorAccent));
+                            .setTextColor(ContextCompat.getColor(DriverHomeActivity.this, R.color.colorAccent));
                 });
 
                 dialog.show();
